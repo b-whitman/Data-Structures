@@ -49,7 +49,7 @@ class LinkedList:
             return self.head.value
 
     def remove_tail(self):
-        pass
+        # TODO
 
     def contains(self, value):
         pass
