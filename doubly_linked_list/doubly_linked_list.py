@@ -122,7 +122,10 @@ class DoublyLinkedList:
     List and inserts it as the new tail node of the List.
     """
     def move_to_end(self, node):
-        pass
+        if node is self.tail:
+            return
+        self.delete(node)
+        self.add_to_tail(node.value)
 
     """
     Deletes the input node from the List, preserving the 
@@ -151,4 +154,12 @@ class DoublyLinkedList:
     in the List.
     """
     def get_max(self):
-        pass
+        max = None
+        if self.head:
+            curr_node = self.head
+            max = curr_node.value
+            while curr_node.next:
+                curr_node = curr_node.next
+                if curr_node.value > max:
+                    max = curr_node.value
+        return max
