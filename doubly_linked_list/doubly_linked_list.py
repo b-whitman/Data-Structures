@@ -9,13 +9,10 @@ class ListNode:
         self.next = next
 
     def delete(self):
-        if self.prev and self.next:
-            self.next.prev = self.prev
+        if self.prev:
             self.prev.next = self.next
-        if self.prev and not self.next:
-            self.prev.next = None
-        if self.next and not self.prev:    
-            self.next.prev = None
+        if self.next:
+            self.next.prev = self.prev
             
 """
 Our doubly-linked list class. It holds references to 
