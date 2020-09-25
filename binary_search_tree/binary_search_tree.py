@@ -89,7 +89,16 @@ class BSTNode:
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self):
-        pass
+        s = LLStack()
+        s.push(self)
+
+        while len(s) > 0:
+            n = s.pop()
+            print(n.value)
+            if n.left != None:
+                s.push(n.left)
+            if n.right != None:
+                s.push(n.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
