@@ -31,9 +31,7 @@ class BSTNode:
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
-        print(f'Checking if {self.value} equals {target}...')
         if self.value == target:
-            print(f'{self.value} equals {target}!')
             return True
         else:
             if target < self.value and self.left != None:
@@ -64,7 +62,11 @@ class BSTNode:
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self):
-        pass
+        if self.left != None:
+            self.left.in_order_print()
+        print(self.value)
+        if self.right != None:
+            self.right.in_order_print()
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
