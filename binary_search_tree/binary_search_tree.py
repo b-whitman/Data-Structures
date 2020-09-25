@@ -9,6 +9,10 @@ This part of the project comprises two days:
 2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods
    on the BSTNode class.
 """
+
+from queue import LLQueue
+from stack import LLStack
+
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -71,7 +75,16 @@ class BSTNode:
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self):
-        pass
+        q = LLQueue()
+        q.enqueue(self)
+
+        while len(q) > 0:
+            n = q.dequeue()
+            print(n.value)
+            if n.left != None:
+                q.enqueue(n.left)
+            if n.right != None:
+                q.enqueue(n.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
