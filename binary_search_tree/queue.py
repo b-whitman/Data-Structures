@@ -16,7 +16,7 @@ Stretch: What if you could only use instances of your Stack class to implement t
 
 from singly_linked_list import LinkedList
 
-class Queue:
+class LLQueue:
     def __init__(self):
         self.size = 0
         self.storage = LinkedList()
